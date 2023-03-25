@@ -16,10 +16,11 @@ public class sample1 {
         SS.init("ECSim/EdgeCloudSim/scripts/sample_app1/config/mobile_devices.xml",
                 "ECSim/EdgeCloudSim/scripts/sample_app1/config/edge_servers.xml");
 
-        String orchestratorPolicy = "Matching";
+//        String orchestratorPolicy = "Matching";
+        String orchestratorPolicy = "POCSA";
 //        String orchestratorPolicy = "Random";
 //        String orchestratorPolicy = "MILP";
-//        String orchestratorPolicy = "POCSA";
+
 
         //创建实体类集合类
         ScenarioFactory scenarioFactory = new SampleScenarioFactory(orchestratorPolicy);
@@ -28,7 +29,7 @@ public class sample1 {
 
 
         //时隙大循环
-        for(int t=0; t<1024; t++){
+        for(int t=0; t<0; t++){
             StaticfinalTags.curTime++;
             //1. 更新mobileDevice的待处理待发送队列 edgeServer的待处理队列
             simManager.updateQueues(t, scenarioFactory);

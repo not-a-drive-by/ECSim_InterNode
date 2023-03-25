@@ -27,9 +27,9 @@ public class TaskGeneratorModel {
     private static int _MobileDeviceNum;
     public static ArrayList<DeviceTaskStatic> _mobileDeviceStatic = new ArrayList<>();
 
-    private static double shape1 = 1.3;
-    private static double shape2 = 1.3;
-    private static double shape3 = 1.3;
+    private static double shape1 = 1.2;
+    private static double shape2 = 1.2;
+    private static double shape3 = 1.2;
 
     public static void main(String[] args) throws IOException,ClassNotFoundException {
         SS.init(mobileDevicesFile);
@@ -96,7 +96,7 @@ public class TaskGeneratorModel {
             List<Task> tList = new ArrayList<Task>();//每个设备的任务集合
             for(int k=0; k< (int) taskNum*deviceTaskStatic.type1Ratio; k++){
 //                tList.add(new Task(1+r.nextInt(2), 32, 2, 1690, taskID++, 0.1));
-                task = new Task(Variable.Pareto_Distribution(), 32, 2, 1690, taskID++, 9);
+                task = new Task(Variable.Pareto_Distribution(), 32, 2, 1690, taskID++, 15);
                 tList.add(task);
                 task.setArrivalTime(sum);
                 sum += Variable.Exp_Distribution(StaticfinalTags.lambda1);
@@ -107,7 +107,7 @@ public class TaskGeneratorModel {
             Variable.updateParetoGenerator( shape2, deviceTaskStatic.meanLen2 );
             for(int k=0; k< (int) taskNum*deviceTaskStatic.type2Ratio; k++){
 //                tList.add(new Task(1+r.nextInt(3), 30, 2, 420, taskID++,0.2));
-                task = new Task(Variable.Pareto_Distribution(),30, 2, 420, taskID++,9);
+                task = new Task(Variable.Pareto_Distribution(),30, 2, 420, taskID++,15);
                 tList.add(task);
                 task.setArrivalTime(sum);
                 sum += Variable.Exp_Distribution(StaticfinalTags.lambda2);
@@ -117,7 +117,7 @@ public class TaskGeneratorModel {
             Variable.updateParetoGenerator( shape3, deviceTaskStatic.meanLen3 );
             for(int k=0; k< (int) taskNum*deviceTaskStatic.type3Ratio; k++){
 //                tList.add(new Task(1+r.nextInt(4), 7, 2, 1690, taskID++,0.3));
-                task = new Task(Variable.Pareto_Distribution(), 7, 2, 1690, taskID++,9);
+                task = new Task(Variable.Pareto_Distribution(), 7, 2, 1690, taskID++,15);
                 tList.add(task);
                 task.setArrivalTime(sum);
                 sum += Variable.Exp_Distribution(StaticfinalTags.lambda3);

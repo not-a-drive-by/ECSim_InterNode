@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18a26140-92e0-43de-8a37-25fa308ba712" name="Changes" comment="" />
+    <list default="true" id="18a26140-92e0-43de-8a37-25fa308ba712" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskInformation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TaskInformation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/applications/sample_app1/sample1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/applications/sample_app1/sample1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/core/SimManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/core/SimManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/task_generator/TaskGeneratorModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/task_generator/TaskGeneratorModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/utils/StaticfinalTags.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/utils/StaticfinalTags.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +46,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ECSim_ada" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -171,6 +178,10 @@
       <workItem from="1676950421931" duration="16447000" />
       <workItem from="1679573974671" duration="9347000" />
       <workItem from="1679584368225" duration="24058000" />
+      <workItem from="1679661547584" duration="8975000" />
+      <workItem from="1679672236091" duration="217000" />
+      <workItem from="1679673511958" duration="632000" />
+      <workItem from="1679714295467" duration="1968000" />
     </task>
     <servers />
   </component>

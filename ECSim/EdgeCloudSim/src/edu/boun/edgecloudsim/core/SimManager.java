@@ -105,8 +105,11 @@ public class SimManager {
         if(orchestratorPolicy.equals("Matching")){
 //            edgeServerManager.processTasks_SJF(time);
             edgeServerManager.processTasks_FCFS(time);
+        }else{
+//            edgeServerManager.processTasks_SJF(time);
+            edgeServerManager.processTasks_FCFS(time);
         }
-        edgeServerManager.processTasks_FCFS(time);
+
         System.out.println("节点内资源调度后"+edgeServerManager.getEdgeServersList());
     }
 

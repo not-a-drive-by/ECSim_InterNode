@@ -16,7 +16,7 @@
 		<serverID>8002</serverID>
 		<location>
 			<x_pos>0</x_pos>
-			<y_pos>100</y_pos>
+			<y_pos>120</y_pos>
 		</location>
 		<host>
 			<core>8</core>
@@ -27,7 +27,7 @@
 	<datacenter arch="x86" os="Linux" vmm="Xen">
 		<serverID>8003</serverID>
 		<location>
-			<x_pos>100</x_pos>
+			<x_pos>120</x_pos>
 			<y_pos>0</y_pos>
 		</location>
 		<host>
@@ -39,8 +39,8 @@
 	<datacenter arch="x86" os="Linux" vmm="Xen">
 		<serverID>8004</serverID>
 		<location>
-			<x_pos>100</x_pos>
-			<y_pos>100</y_pos>
+			<x_pos>120</x_pos>
+			<y_pos>120</y_pos>
 		</location>
 		<host>
 			<core>8</core>
@@ -51,8 +51,8 @@
 	<datacenter arch="x86" os="Linux" vmm="Xen">
 		<serverID>8005</serverID>
 		<location>
-			<x_pos>50</x_pos>
-			<y_pos>50</y_pos>
+			<x_pos>60</x_pos>
+			<y_pos>60</y_pos>
 		</location>
 		<host>
 			<core>8</core>
