@@ -52,7 +52,6 @@ public class EdgeVM {
     public String toString() {
         return "EdgeVM{" +
                 "processingTask=" + processingTask +
-                ", offTime=" + offTime +
                 '}';
     }
 }

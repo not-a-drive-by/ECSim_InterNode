@@ -5,6 +5,7 @@ import edu.boun.edgecloudsim.edge_server.EdgeServerManager;
 import edu.boun.edgecloudsim.network.Channel;
 import edu.boun.edgecloudsim.network.NetworkModel;
 import edu.boun.edgecloudsim.task_generator.Task;
+import edu.boun.edgecloudsim.utils.StaticfinalTags;
 
 import java.util.List;
 
@@ -40,14 +41,21 @@ public class POCSAEdgeOrchestrator extends EdgeOrchestrator{
                         backupServer = null;
                     }
 
-                    /**延迟最小的*/
-                    //找对应队列空闲的虚拟机里delay最小的
+                    /**找对应队列空闲的虚拟机里延迟最小的的*/
+                    //传输时延
                     double latency = task.dataSize / cha.ratio;
+                    //传输排队等候时延
+                    for(Task tmpt : task.device.getTransQue()){
+                        if( tmpt.arriveClTime!=-1 && tmpt.getTargetServer() == task.getTargetServer()){
+                            latency += tmpt.arriveClTime - StaticfinalTags.curTime;
+//                            latency += 1;
+                        }
+                    }
+                    //服务器排队时延
                     List<Task> correspondQueue = server.getQueue().get(task.getType()-1);
-                    latency += correspondQueue.size();
-//                    for(Task t : correspondQueue){
-//                        latency += t.getLength();
-//                    }
+                    for(Task t : correspondQueue){
+                        latency += t.getLength();
+                    }
                     if( latency < min_delay ) {
                         min_delay = latency;
                         minDelaySerer = server;

@@ -211,34 +211,57 @@ public class MobileDevice {
         //新到达的待卸载任务排序后依次放入，否则前面传到一半的不传了
         Collections.sort(bufferTasks,taskComparatorByLen);
         transQueue.addAll(bufferTasks);
-        //根据信道传输速率 更新每个任务
+
+        /**根据到达时间判断任务是否传输完成*/
         Iterator<Task> iteratorTask = transQueue.iterator();
         while( iteratorTask.hasNext() ){
-            Task task = iteratorTask.next();
-            int serverID = task.getTargetServer().getId();
-            Channel cha = networkModel.serachChannelByDeviceandServer( mobileID, serverID);
-            if( cha.usedFlag == false ){
-                //可以传输不止一个任务、万一同一个设备有多个任务匹配到同一个服务器
-                if( cha.ratio > task.getDataSize() ){
-                    //能传输完当前任务 信道flag依旧设置为false
-                    cha.setRatio( cha.ratio - task.getDataSize() );
-                    task.setDataSize( task.getDataSize() - cha.ratio );//每个任务减去该时隙传输的内容大小
-                    task.getTargetServer().receiveOffloadTasks(task);
+            Task t = iteratorTask.next();
+            Channel cha = networkModel.serachChannelByDeviceandServer(mobileID, t.getTargetServer().getId());
+
+            if(t.arriveClTime==-1 && cha.usedFlag == false){ //任务还没开始传输
+                if(cha.usedFlag == false){//信道空闲就开始传
+                    t.transRatio = cha.ratio;
+                    cha.usedFlag = true;
+                    t.arriveClTime = StaticfinalTags.curTime + (int) Math.ceil(t.dataSize/cha.ratio);
+                }
+                //信道被占用则什么都不做
+            }else if( t.arriveClTime !=-1){  //任务已经开始传输
+                //传输完毕 信道不占用
+                if(t.arriveClTime <= StaticfinalTags.curTime ){
+                    t.getTargetServer().receiveOffloadTasks(t);
                     iteratorTask.remove();
                 }else{
-                    //不足以传输完当前任务
+                    //未传输完 继续传
                     cha.usedFlag = true;
-                    task.setDataSize( task.getDataSize() - cha.ratio );//每个任务减去该时隙传输的内容大小
                 }
 
-
-//                //如果传输完了 就调用对应服务器的接收函数
-//                if( task.getDataSize() <= 0 ) {
-//                    task.getTargetServer().receiveOffloadTasks(task);
-//                    iteratorTask.remove();
-//                }
             }
         }
+
+
+        /**根据信道传输速率 更新每个任务*/
+//        Iterator<Task> iteratorTask = transQueue.iterator();
+//        while( iteratorTask.hasNext() ){
+//            Task task = iteratorTask.next();
+//            int serverID = task.getTargetServer().getId();
+//            Channel cha = networkModel.serachChannelByDeviceandServer( mobileID, serverID);
+//            if( cha.usedFlag == false ){
+//                //可以传输不止一个任务、万一同一个设备有多个任务匹配到同一个服务器
+//                if( cha.ratio > task.getDataSize() ){
+//                    //能传输完当前任务 信道flag依旧设置为false
+//                    cha.setRatio( cha.ratio - task.getDataSize() );
+//                    task.setDataSize( task.getDataSize() - cha.ratio );//每个任务减去该时隙传输的内容大小
+//                    task.getTargetServer().receiveOffloadTasks(task);
+//                    iteratorTask.remove();
+//                }else{
+//                    //不足以传输完当前任务
+//                    cha.usedFlag = true;
+//                    task.setDataSize( task.getDataSize() - cha.ratio );//每个任务减去该时隙传输的内容大小
+//                }
+//
+//
+//            }
+//        }
 
     }
 
@@ -261,29 +284,32 @@ public class MobileDevice {
         //新到达的待卸载任务排序后依次放入，否则前面传到一半的不传了
         Collections.sort(bufferTasks,taskComparatorByLen);
         transQueue.addAll(bufferTasks);
-        //根据信道传输速率 更新每个任务
+
+        /**根据到达时间判断任务是否传输完成*/
         Iterator<Task> iteratorTask = transQueue.iterator();
         while( iteratorTask.hasNext() ){
-            Task task = iteratorTask.next();
-            int serverID = task.getTargetServer().getId();
-            Channel cha = networkModel.serachChannelByDeviceandServer( mobileID, serverID);
-            if( cha.usedFlag == false ){
-                //可以传输不止一个任务、万一同一个设备有多个任务匹配到同一个服务器
-                if( cha.ratio > task.getDataSize() ){
-                    //能传输完当前任务 信道flag依旧设置为false
-                    cha.setRatio( cha.ratio - task.getDataSize() );
-                    task.setDataSize( task.getDataSize() - cha.ratio );//每个任务减去该时隙传输的内容大小
-                    task.getTargetServer().receiveOffloadTasks(task);
+            Task t = iteratorTask.next();
+            Channel cha = networkModel.serachChannelByDeviceandServer(mobileID, t.getTargetServer().getId());
+
+            if(t.arriveClTime==-1 && cha.usedFlag == false){ //任务还没开始传输
+                if(cha.usedFlag == false){//信道空闲
+                    t.transRatio = cha.ratio;
+                    cha.usedFlag = true;
+                    t.arriveClTime = StaticfinalTags.curTime + (int) Math.ceil(t.dataSize/cha.ratio);
+                }
+                //信道被占用则什么都不做
+            }else if( t.arriveClTime !=-1){  //任务已经开始传输
+                //传输完毕 信道不占用
+                if(t.arriveClTime <= StaticfinalTags.curTime ){
+                    t.getTargetServer().receiveOffloadTasks(t);
                     iteratorTask.remove();
                 }else{
-                    //不足以传输完当前任务
+                    //未传输完 继续传
                     cha.usedFlag = true;
-                    task.setDataSize( task.getDataSize() - cha.ratio );//每个任务减去该时隙传输的内容大小
                 }
 
             }
         }
-
     }
 
     //Queue比较器函数
@@ -335,6 +361,7 @@ public class MobileDevice {
     public void setY(double y_pos) {    this.y_pos = y_pos;    }
     public int getPower(){ return power;}
     public int getMobileID(){   return mobileID; }
+    public List<Task> getTransQue() { return transQueue; }
 
     @Override
     public String toString() {

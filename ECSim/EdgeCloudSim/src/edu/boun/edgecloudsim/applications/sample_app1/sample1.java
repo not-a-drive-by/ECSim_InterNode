@@ -29,7 +29,7 @@ public class sample1 {
 
 
         //时隙大循环
-        for(int t=0; t<0; t++){
+        for(int t=0; t<1024; t++){
             StaticfinalTags.curTime++;
             //1. 更新mobileDevice的待处理待发送队列 edgeServer的待处理队列
             simManager.updateQueues(t, scenarioFactory);
@@ -47,11 +47,12 @@ public class sample1 {
             simManager.processTask(t);
         }
 
+        System.out.println(Data.finishedTasks);
         //输出统计结果
         System.out.println( "完成了" + Data.getFinishedTaskSum() + "个任务，平均时延" + Data.overallDelay()  );
 
         for(EdgeDataCenter server: simManager.getEdgeServerManager().getEdgeServersList()){
-            System.out.println(server.getId()+" "+server.totalNum);
+            System.out.print(server.totalNum + " ");
         }
         //结束
         simManager.shutdownEntity();

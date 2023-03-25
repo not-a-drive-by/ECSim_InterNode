@@ -11,12 +11,13 @@ public final class StaticfinalTags {
     public static int curTime=0;
 
     /**设备参数*/
-    public static double lambda1 = 0.075; // 0.05job/slot
-    public static double lambda2 = 0.075;
-    public static double lambda3 = 0.075;
+    public static double lambda1 = 0.05; // 0.05job/slot
+    public static double lambda2 = 0.05;
+    public static double lambda3 = 0.05;
 
     public static double channelThres = 0.5;
     public static double disThres = 100;
 
-    //分布的参数
+    /**信道速率更新间隔*/
+    public static int ratioInterval = 15;
 }

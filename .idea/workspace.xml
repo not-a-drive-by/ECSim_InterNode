@@ -6,6 +6,16 @@
       <change beforePath="$PROJECT_DIR$/TaskInformation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TaskInformation.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/applications/sample_app1/sample1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/applications/sample_app1/sample1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/core/SimManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/core/SimManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/edge_client/MobileDevice$QueueComparatorByLen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/edge_client/MobileDevice$QueueComparatorByLen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/edge_client/MobileDevice$QueueComparatorByQValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/edge_client/MobileDevice$QueueComparatorByQValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/edge_client/MobileDevice$TaskComparatorBySize.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/edge_client/MobileDevice$TaskComparatorBySize.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/edge_client/MobileDevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/edge_client/MobileDevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/edge_orchestrator/POCSAEdgeOrchestrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/edge_orchestrator/POCSAEdgeOrchestrator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/edge_server/EdgeDataCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/edge_server/EdgeDataCenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/edge_server/EdgeVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/edge_server/EdgeVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/task_generator/Task$ServerPreferenceComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/task_generator/Task$ServerPreferenceComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/task_generator/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/task_generator/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/task_generator/TaskGeneratorModel$TaskComparatorByTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/task_generator/TaskGeneratorModel$TaskComparatorByTime.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/task_generator/TaskGeneratorModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/task_generator/TaskGeneratorModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/utils/StaticfinalTags.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECSim _ada/edu/boun/edgecloudsim/utils/StaticfinalTags.class" afterDir="false" />
     </list>
@@ -181,7 +191,7 @@
       <workItem from="1679661547584" duration="8975000" />
       <workItem from="1679672236091" duration="217000" />
       <workItem from="1679673511958" duration="632000" />
-      <workItem from="1679714295467" duration="1968000" />
+      <workItem from="1679714295467" duration="17036000" />
     </task>
     <servers />
   </component>

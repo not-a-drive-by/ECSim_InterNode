@@ -346,14 +346,7 @@ public class EdgeDataCenter {
 
     @Override
     public String toString() {
-        return "EdgeDataCenter{" +
-                "id=" + id +
-                ", CPU=" + CPU +
-                ", RAM=" + RAM +
-                ", storage=" + storage +
-                ", x_pos=" + x_pos +
-                ", y_pos=" + y_pos + "\r\n" +
-                "avtiveVM" + activeVM +
+        return "EDCenter_id:" + id +
                 '}' + "\r\n";
     }
 }
