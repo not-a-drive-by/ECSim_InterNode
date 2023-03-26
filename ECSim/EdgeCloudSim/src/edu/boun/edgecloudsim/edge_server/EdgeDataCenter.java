@@ -41,11 +41,11 @@ public class EdgeDataCenter {
     TaskPreferenceComparator taskPreferenceComparator = new TaskPreferenceComparator();
     TaskLengthComparator taskLengthComparator = new TaskLengthComparator();
 
-    public EdgeDataCenter(int _id, int _CPU, int _RAM, int _storage, double x, double y){
+    public EdgeDataCenter(int _id,  double x, double y){
         this.id = _id;
-        this.CPU = _CPU;
-        this.RAM = _RAM;
-        this.storage = _storage;
+        this.CPU = 6;
+        this.RAM = 69;
+        this.storage = 3800;
         this.x_pos = x;
         this.y_pos = y;
 
@@ -61,7 +61,7 @@ public class EdgeDataCenter {
 
 
     public void updateServerQuota(){
-        int sum = 3;
+        int sum = StaticfinalTags.quota;
         for( int i=0; i<3;i++){
             if(activeVM.get(i).getProcessingTask() != null){
                 sum--;

@@ -28,10 +28,10 @@ public class EdgeServerManager {
         double x_pos = Double.parseDouble(location.getElementsByTagName("x_pos").item(0).getTextContent());
         double y_pos = Double.parseDouble(location.getElementsByTagName("y_pos").item(0).getTextContent());
         Element host = (Element)datacenterElement.getElementsByTagName("host").item(0);
-        int CPU = Integer.parseInt(host.getElementsByTagName("core").item(0).getTextContent());
-        int RAM = Integer.parseInt(host.getElementsByTagName("ram").item(0).getTextContent());
-        int storage = Integer.parseInt(host.getElementsByTagName("storage").item(0).getTextContent());
-        return new EdgeDataCenter( id, CPU, RAM, storage, x_pos, y_pos );
+//        int CPU = Integer.parseInt(host.getElementsByTagName("core").item(0).getTextContent());
+//        int RAM = Integer.parseInt(host.getElementsByTagName("ram").item(0).getTextContent());
+//        int storage = Integer.parseInt(host.getElementsByTagName("storage").item(0).getTextContent());
+        return new EdgeDataCenter( id,x_pos, y_pos );
     }
 
     //创建所有datacenters时调用创建VM、Host、单个datacenter

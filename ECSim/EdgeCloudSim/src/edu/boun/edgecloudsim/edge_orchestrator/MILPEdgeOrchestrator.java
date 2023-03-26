@@ -47,13 +47,19 @@ public class MILPEdgeOrchestrator extends EdgeOrchestrator{
 
                 for(int i=0; i<m; i++){ //task
                     for(int j=0; j<c; j++){ //server
-                        EdgeDataCenter vm = EdgeServers.get(j);
+                        EdgeDataCenter server = EdgeServers.get(j);
                         Task task = preMatchTasks.get(i);
-                        int resourceSum = vm.CPU + vm.RAM + vm.storage;
+                        int resourceSum = server.CPU + server.RAM + server.storage;
                         Channel cha = networkModel.serachChannelByDeviceandServer(
-                                task.getMobileDevice().getMobileID(), vm.getId());
+                                task.getMobileDevice().getMobileID(), server.getId());
+                        double proQueWait = 0;
+                        List<Task> processQue = server.getQueue().get(task.getType()-1);
+                        for(Task tmp : processQue){
+                            proQueWait += tmp.length;
+                        }
                         cs1 = cplex.sum( cs1, cplex.prod(x[i][j], resourceSum));
-                        cs2 = cplex.sum( cs2, cplex.prod(x[i][j], preMatchTasks.get(i).getDataSize()/cha.ratio ));
+                        cs2 = cplex.sum( cs2, cplex.prod(x[i][j],
+                                proQueWait+(task.getDataSize()/cha.ratio) ));
                     }
                 }
                 cs2 = cplex.prod(cs2, -1);

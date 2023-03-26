@@ -16,10 +16,11 @@ public class sample1 {
         SS.init("ECSim/EdgeCloudSim/scripts/sample_app1/config/mobile_devices.xml",
                 "ECSim/EdgeCloudSim/scripts/sample_app1/config/edge_servers.xml");
 
-//        String orchestratorPolicy = "Matching";
-        String orchestratorPolicy = "POCSA";
 //        String orchestratorPolicy = "Random";
-//        String orchestratorPolicy = "MILP";
+
+//        String orchestratorPolicy = "Matching";
+//        String orchestratorPolicy = "POCSA";
+        String orchestratorPolicy = "MILP";
 
 
         //创建实体类集合类

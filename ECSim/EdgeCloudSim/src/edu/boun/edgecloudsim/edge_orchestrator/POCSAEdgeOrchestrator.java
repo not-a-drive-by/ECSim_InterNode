@@ -45,12 +45,12 @@ public class POCSAEdgeOrchestrator extends EdgeOrchestrator{
                     //传输时延
                     double latency = task.dataSize / cha.ratio;
                     //传输排队等候时延
-                    for(Task tmpt : task.device.getTransQue()){
-                        if( tmpt.arriveClTime!=-1 && tmpt.getTargetServer() == task.getTargetServer()){
-                            latency += tmpt.arriveClTime - StaticfinalTags.curTime;
-//                            latency += 1;
-                        }
-                    }
+//                    for(Task tmpt : task.device.getTransQue()){
+//                        if( tmpt.arriveClTime!=-1 && tmpt.getTargetServer() == task.getTargetServer()){
+//                            latency += tmpt.arriveClTime - StaticfinalTags.curTime;
+////                            latency += 1;
+//                        }
+//                    }
                     //服务器排队时延
                     List<Task> correspondQueue = server.getQueue().get(task.getType()-1);
                     for(Task t : correspondQueue){
@@ -61,14 +61,6 @@ public class POCSAEdgeOrchestrator extends EdgeOrchestrator{
                         minDelaySerer = server;
                     }
 
-
-//                    if( server.getActiveVM().get(task.getType()-1).getProcessingTask() == null ){
-//                        double latency = task.dataSize / cha.ratio;
-//                        if( latency < min_delay ) {
-//                            min_delay = latency;
-//                            minDelaySerer = server;
-//                        }
-//                    }
 
 
 

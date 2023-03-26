@@ -12,6 +12,7 @@ public class Variable {
 
     public static ParetoDistribution taskLenRNG = new ParetoDistribution();
     public static PoissonDistribution intervalRNG = new PoissonDistribution(2);
+    public static ExponentialDistribution expRNG = new ExponentialDistribution(0.5);
 
     //信道增益中 信道参数 指数分布
     public static int expRnd (double lambda) {
@@ -66,12 +67,23 @@ public class Variable {
         }
         return x;
     }
+    public static double Exp_Double() {
+//        double res = expRNG.sample();
+//        if (res > 1.5) {
+//            return 1.5;
+//        }else if(res <0.7){
+//            return 0.7;
+//        }else{
+//            return res;
+//        }
+        return 0.5+expRNG.sample();
+    }
 
 
     public static void main(String[] args) {
         updateParetoGenerator(0.1, 1);
         for (int i=0; i<50; i++){
-            System.out.println(expRnd(1.5));
+            System.out.println(Exp_Double());
         }
     }
 

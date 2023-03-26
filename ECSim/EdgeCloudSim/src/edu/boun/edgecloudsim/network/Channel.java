@@ -32,11 +32,11 @@ public class Channel {
     //更新信道传输速率
     public void updateRatio(){
         distance = getDistance();
-        double channelGain = Variable.expRnd(1)*Math.pow(distance,-3);
+        double channelGain = Variable.Exp_Double()*Math.pow(distance,-3.5);
         double SINR = channelGain*mobileDevice.getPower()/Math.pow(10,-9);
 //        int ran = r.nextInt()<0.5 ? -3 : 3;
         this.ratio = Math.log(1+SINR)/Math.log(2);
-        this.ratio /= 8;
+        this.ratio /= 6.5;
 //        if(edgeServer.getId() == 8002){
 //            this.ratio /= 2;//设置一个质量较差的信道
 //        }

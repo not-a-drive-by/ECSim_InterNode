@@ -30,9 +30,9 @@ public class TaskGeneratorModel {
     private static int LenLower = 5;
     private static int LenUpper = 10;
 
-    private static double shape1 = 1.2;
-    private static double shape2 = 1.2;
-    private static double shape3 = 1.2;
+    private static double shape1 = 1.3;
+    private static double shape2 = 1.3;
+    private static double shape3 = 1.3;
 
     public static void main(String[] args) throws IOException,ClassNotFoundException {
         SS.init(mobileDevicesFile);
@@ -73,7 +73,8 @@ public class TaskGeneratorModel {
             System.out.println(e.getMessage());
         }
 
-        System.out.println(taskList);
+        System.out.println("产生完了");
+//        System.out.println(taskList);
 
 
     }
